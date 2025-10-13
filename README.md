@@ -21,6 +21,24 @@ config:
 classDiagram
 direction LR
 
+class Homestead{
+	int day
+	Map m
+	setup() void
+	draw() void
+}
+
+class Map{
+	int current;
+	ArrayList<String> maps;
+	display() void
+}
+
+class Entity{
+	int maxHP, HP;
+	int hunger, hydration;
+	move() void
+}
 
 Homestead "1" --o "1" Map 
 Homestead "1" --o "0...n" Entity
