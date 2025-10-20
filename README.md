@@ -53,7 +53,7 @@ class Plant{
 	int growth
 	int r, c
 	int type
-	
+	String[] types
 	grow() void
 	harvest(p: Player) void
 	setState() void
@@ -63,16 +63,21 @@ class Plant{
 
 class CookBook{
 	unordered_map<String, int> foodCookBook
-	String[] ingedients
+	String[] ingredients 
 	
-	(type: String, ingredient) bool
+	
 	makeFood(type: String,materialSum: int) bool
 }
 
-Class Player{
-	CookBook b
-	int hunger, hydration
+class Inventory{
 	unordered_map<int, int> materials
+	CookBook cBook
+	
+}
+
+Class Player{
+	int hunger, hydration
+	Inventory backpack
 	
 	move() void
 	harvestPlant(r, c) void
@@ -93,9 +98,14 @@ class Animal{
 }
 
 Homestead "1" --o "1" Map 
-Homestead "1" --o "0...n" Entity
+Homestead "1" --o "1" Player
+Homestead "1" --o "0...n" Plant
+Homestead "1" --o "0...n" Animal
+Inventory "1" --o "1" CookBook
+Player "1" --o "1" Inventory
 Player <|--Entity
 Plant <|-- Entity
+Animal <|-- Entity
 
 
 ```
@@ -112,4 +122,4 @@ Plant <|-- Entity
 	- player eating/drinking types of food
   ### Week 3
     - Add day/night progression system
-	- Add player CookBook
+	- Add player CookBook; cooking functionality
