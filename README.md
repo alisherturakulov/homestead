@@ -70,7 +70,7 @@ class CookBook{
 }
 
 class Inventory{
-	unordered_map<int, int> materials
+	HashMap<int, int> materials
 	CookBook cBook
 	
 }
@@ -80,8 +80,8 @@ Class Player{
 	Inventory backpack
 	
 	move() void
-	harvestPlant(r, c) void
-	waterPlant(r, c) void
+	harvestPlant(r: int, c: int) void
+	waterPlant(r: int, c: int) void
 	eat(plant: Plant) void
 	
 	keyPressed() void
