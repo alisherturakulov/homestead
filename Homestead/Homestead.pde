@@ -1,13 +1,19 @@
 //Homestead
-int day = 1;
-Map m = new Map();
+int day;
+Map m;
 Player p;
 
 void setup(){
   p = new Player();
+  m = new Map();
+  day = 1;
+  size(800, 800);
 }
 
-void draw(){}
+void draw(){
+  background(255);
+  m.display();
+}
 
 //calls players corresponding keypressed/released
 //functions

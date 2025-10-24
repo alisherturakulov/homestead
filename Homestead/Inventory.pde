@@ -1,5 +1,7 @@
+import java.util.Map;
+
 class Inventory{
-  HashMap<int, int> materials;
+  HashMap<Integer, Integer> materials;
   CookBook cBook;
   
   Inventory(){}

@@ -1,8 +1,10 @@
+import java.util.Map;
+
 class CookBook{
-  HashMap<String, int> foodCookBook;
+  HashMap<String, Integer> foodCookBook;
   String[] ingredients;
   
-  bool makeFood(String type, int materialSum){
-  return true;
+  boolean makeFood(String type, int materialSum){
+    return true;
   }
 }
