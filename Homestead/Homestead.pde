@@ -13,14 +13,27 @@ void setup(){
 void draw(){
   background(255);
   m.display();
+  p.display();
+  p.move();
+  
 }
 
 //calls players corresponding keypressed/released
 //functions
-void keyPressed(){}
+void keyPressed(){
+  if(keyCode == 'w' ||keyCode == 'a' || keyCode == 's' || keyCode == 'd'){
+    p.keyPressed();
+  }
+}
 
-void keyReleased(){}
+void keyReleased(){
+  if(keyCode == 'w' || keyCode == 'a' || keyCode == 's' || keyCode == 'd'){
+    p.keyReleased();
+  }
+}
 
+
+//for plant and animal interactions
 void mousePressed(){}
 
 void mouseReleased(){}

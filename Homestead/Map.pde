@@ -10,6 +10,7 @@ class Map{
   
   void display(){
     fill(10, 180, 20);
+    stroke(0);
     for(int i = 0; i< map.length; ++i){
       for(int j =0 ; j < map[0].length; ++j){
        square(j*40,i*40,40);

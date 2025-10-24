@@ -4,5 +4,8 @@ class Inventory{
   HashMap<Integer, Integer> materials;
   CookBook cBook;
   
-  Inventory(){}
+  Inventory(){
+    materials = new HashMap<Integer, Integer>(10);
+    cBook = new CookBook();
+  }
 }
