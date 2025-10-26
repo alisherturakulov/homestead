@@ -7,7 +7,7 @@ void setup(){
   p = new Player();
   m = new Map();
   day = 1;
-  size(800, 800);
+  size(500, 500);
 }
 
 void draw(){
@@ -21,15 +21,11 @@ void draw(){
 //calls players corresponding keypressed/released
 //functions
 void keyPressed(){
-  if(keyCode == 'w' ||keyCode == 'a' || keyCode == 's' || keyCode == 'd'){
     p.keyPressed();
-  }
 }
 
 void keyReleased(){
-  if(keyCode == 'w' || keyCode == 'a' || keyCode == 's' || keyCode == 'd'){
     p.keyReleased();
-  }
 }
 
 

@@ -3,8 +3,8 @@ class Player extends Entity{
   int hydration;
   Inventory backpack;
   boolean wki, aki, ski, dki;
-  int dx = 9;
-  int dy = 9;
+  int speed = 2;
+  
   Player(){
     super(400, 400, 100, 100);
     hunger = 100;
@@ -14,9 +14,9 @@ class Player extends Entity{
   
   void display(){
     fill(0, 10, 130);
-    noStroke();
-    circle(position.x, position.y, 40);
+    circle(position.y, position.x, 20);
     fill(0);
+    
   }
   
   void waterPlant(){
@@ -34,53 +34,54 @@ class Player extends Entity{
   void move(){
     
    if(wki){
-     position.x -= dx;
+     position.x -= speed;
    }
    if(aki){
-     position.y -= dy;
+     position.y -= speed;
    }
    if(ski){
-     position.x += dx;
+     position.x += speed;
    }
    if(dki){
-     position.y += dy;
+     position.y += speed;
    }
    if(position.x < 0){
-     position.x = 795;
+     position.x = width;
    }
-   if(position.x > 800){
-     position.x = 5;
+   if(position.x > width){
+     position.x = 0;
    }
    if(position.y < 0){
-     position.y = 795;
+     position.y = width;
    }
-   if(position.y > 800){
-     position.y = 5;
+   if(position.y > width){
+     position.y = 0;
    }
   }
   
   //will change the value of the boolean incr for each direction
   //based on the boolean, the move() method will increment player's x or y
   void keyPressed(){
-    if(keyCode == 'w'){
+    //println(keyCode + " " + key);
+    if(key == 'w'){
       wki = true;
-    }else if(keyCode == 'a'){
+    }else if(key == 'a'){
       aki = true;
-    }else if(keyCode == 's'){
+    }else if(key == 's'){
       ski = true;
-    }else if(keyCode == 'd'){
+    }else if(key == 'd'){
       dki = true;
     }
   }
   
   void keyReleased(){
-    if(keyCode == 'w'){
+    if(key == 'w'){
       wki=false;
-    }else if(keyCode == 'a'){
+    }else if(key == 'a'){
       aki = false;
-    }else if(keyCode == 's'){
+    }else if(key == 's'){
       ski = false;
-    }else if(keyCode == 'd'){
+    }else if(key == 'd'){
       dki = false;
     }
   }
