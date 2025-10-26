@@ -12,10 +12,10 @@ class Map{
     fill(10, 180, 20);
     stroke(0,50,5);
     //will keep track of the location of this 10x10 box within the larger map which is 50 by 50.
-    float player_x = p.position.x;
-    float player_y = p.position.y;
-    int xstart_index = (int) (player_x / 20)-5;
-    int ystart_index = (int) (player_y / 20) - 5;
+    float player_x = p.xview;
+    float player_y = p.yview;
+    int xstart_index = (int) (player_x / 50)-5;
+    int ystart_index = (int) (player_y / 50) - 5;
     int mapRow = ystart_index;
     int mapCol = xstart_index;
     

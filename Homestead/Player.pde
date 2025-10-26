@@ -4,9 +4,13 @@ class Player extends Entity{
   Inventory backpack;
   boolean wki, aki, ski, dki;
   int speed = 2;
-  
+  boolean outer = false;
+  //moves the players view
+  int xview =1250;
+  int yview =1250;
+  int vspeed = 10;
   Player(){
-    super(400, 400, 100, 100);
+    super(250, 250, 100, 100);
     hunger = 100;
     hydration = 100;
     backpack= new Inventory();
@@ -32,18 +36,32 @@ class Player extends Entity{
   }
   
   void move(){
-    
-   if(wki){
-     position.x -= speed;
-   }
-   if(aki){
-     position.y -= speed;
-   }
-   if(ski){
-     position.x += speed;
-   }
-   if(dki){
-     position.y += speed;
+   if(outer){ 
+     if(wki){
+       position.x -= speed;
+     }
+     if(aki){
+       position.y -= speed;
+     }
+     if(ski){
+       position.x += speed;
+     }
+     if(dki){
+       position.y += speed;
+     }
+   }else{
+     if(wki){
+       xview -= vspeed;
+     }
+     if(aki){
+       yview -= vspeed;
+     }
+     if(ski){
+       xview += vspeed;
+     }
+     if(dki){
+       yview += vspeed;
+     }
    }
    if(position.x < 0){
      position.x = width;
