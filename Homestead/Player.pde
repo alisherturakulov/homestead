@@ -6,8 +6,8 @@ class Player extends Entity{
   int speed = 2;
   boolean outer = false;
   //moves the players view
-  int xview =1250;
-  int yview =1250;
+  float xview =1250;
+  float yview =1250;
   int vspeed = 10;
   Player(){
     super(250, 250, 100, 100);
@@ -36,7 +36,6 @@ class Player extends Entity{
   }
   
   void move(){
-   if(outer){ 
      if(wki){
        position.x -= speed;
      }
@@ -49,9 +48,9 @@ class Player extends Entity{
      if(dki){
        position.y += speed;
      }
-   }else{
+   /*}else{
      if(wki){
-       xview -= vspeed;
+        yview -= vspeed;
      }
      if(aki){
        yview -= vspeed;
@@ -62,18 +61,31 @@ class Player extends Entity{
      if(dki){
        yview += vspeed;
      }
-   }
+   }*/
+   // move the view bounds when the players trying to go in that direction
    if(position.x < 0){
-     position.x = width;
+     if(m.row_start != 0){
+       --m.row_start;
+     }
+     position.x = 10; //to prevent going out of bounds again
    }
    if(position.x > width){
-     position.x = 0;
+     if(m.row_start != 40){
+       ++m.row_start;
+     }
+     position.x = width - 10;
    }
    if(position.y < 0){
-     position.y = width;
+     if(m.col_start != 0){
+       --m.col_start;
+     }
+     position.y = 10;
    }
-   if(position.y > width){
-     position.y = 0;
+   if(position.y > height){
+     if(m.col_start != 40){
+       ++m.col_start;
+     }
+     position.y = height -10;
    }
   }
   
@@ -83,7 +95,7 @@ class Player extends Entity{
     //println(keyCode + " " + key);
     if(key == 'w'){
       wki = true;
-    }else if(key == 'a'){
+    }else if( key == 'a'){
       aki = true;
     }else if(key == 's'){
       ski = true;

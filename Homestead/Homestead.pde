@@ -2,6 +2,8 @@
 int day;
 Map m;
 Player p;
+ int WINDOW_WIDTH  = 500;
+ int WINDOW_HEIGHT = 500;
 
 void setup(){
   p = new Player();
