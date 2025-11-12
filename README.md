@@ -4,8 +4,8 @@
 ## Features
   - The map will be 2d, and involve multiple places that can be traveled to
   - There will be farming mechanics, as well an inventory for tools
-  - Events and actions take place over the course of a day on the farm
-  - It will be roguelike, so the game restarts on another day; crop/livestock states will be maintained
+  - Events take place over the course of a day on the farm
+  - Roguelike, so the game restarts after each day; crop/livestock states are maintained
   - Prototyped in Processing IDE
   
 ## UML Diagrams
@@ -74,8 +74,7 @@ class Inventory{
 	CookBook cBook
 	
 }
-
-Class Player{
+class Player{
 	int hunger, hydration
 	Inventory backpack
 	
@@ -89,6 +88,7 @@ Class Player{
 	mousePressed() void
 	mouseReleased() void
 }
+
 
 class Animal{
 	int food, water
@@ -112,14 +112,14 @@ Animal <|-- Entity
 
 ## Timeline
 
-  ### Week 1
+  ### Phase 1
     - Classes: Entity, Homestead, Map, Plants, Animals
 	- Player Movement, harvesting
 	- Map display
 	- Plants class with plant locations
-  ### Week 2
+  ### Phase 2
 	- player interactions with plants/animals
 	- player eating/drinking types of food
-  ### Week 3
+  ### Phase 3
     - Add day/night progression system
 	- Add player CookBook; cooking functionality
