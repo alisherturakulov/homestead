@@ -14,10 +14,11 @@ class Map{
   }
   
   void display(){
-    fill(10, 180, 20);
+    
     stroke(0,50,5);
+    /* Old algorithm for map scrolling
     //will keep track of the location of this 10x10 box within the larger map which is 50 by 50.
-    /*float player_x = p.xview;
+    float player_x = p.xview;
     float player_y = p.yview;
     int xstart_index = (int) (player_x / 2500 * 49) - 5;
     int ystart_index = (int) (player_y / 2500 * 49) - 5;
@@ -43,10 +44,12 @@ class Map{
     for(int i =  0; i< 10; ++i){
       for(int j = 0; j < 10; ++j){
         //rectMode(0);
+        fill(10, 180, 20);
         if(map[i+row_start][j+col_start] == 1){
           fill(255);
         }
-       square(j*50,i*50,50);
+        
+        square(j*50,i*50,50);
       // if(mapCol < 49)++mapCol;
       }
       //if(mapRow < 49)++mapRow;
