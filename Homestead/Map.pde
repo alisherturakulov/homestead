@@ -1,5 +1,6 @@
 class Map{
-  //will hold the different places on the map; may change to a single scrollable map
+  //map to hold tile information for map
+  //Key: 0 = Grass; 1 = Barrier; 2 = dirt; 3 = water; and >= 4 = Plants
   int[][] map;
   //will change with wasd key presses
   int row_start = 20;
@@ -44,10 +45,15 @@ class Map{
     for(int i =  0; i< 10; ++i){
       for(int j = 0; j < 10; ++j){
         //rectMode(0);
-        fill(10, 180, 20);
-        if(map[i+row_start][j+col_start] == 1){
-          fill(255);
-        }
+        fill(182, 220, 118);
+        int value = map[i+row_start][j+col_start];
+        if(value == 1){
+          fill(48, 54, 51);
+        }else if(value == 2){
+          fill(48, 54, 51);
+        }else if(value == 3){
+          fill(117, 182, 219);
+        }//note: put the ifs for plants first
         
         square(j*50,i*50,50);
       // if(mapCol < 49)++mapCol;
